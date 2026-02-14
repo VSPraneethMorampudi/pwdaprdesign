@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Jira-like Design System */
+    /* Structure */
+    --background: 0 0% 100%;
+    --foreground: 214 50% 21%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 214 50% 21%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 50% 21%;
+
+    /* Primary: Jira Blue */
+    --primary: 211 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 13% 94%;
+    --secondary-foreground: 218 18% 41%;
+
+    --muted: 220 14% 97%;
+    --muted-foreground: 218 16% 50%;
+
+    --accent: 220 13% 94%;
+    --accent-foreground: 218 18% 41%;
+
+    --destructive: 8 92% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 211 100% 65%;
+
+    /* Crisp & square: 3px radius */
+    --radius: 3px;
+
+    /* System Sidebar (Leftmost): Slate 900 */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 220 14% 96%;
+    --sidebar-primary: 211 100% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 211 100% 65%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 211 100% 65%;
+
+    /* Context Panel (Secondary sidebar) */
+    --context-panel: 220 14% 97%;
+
+    /* Actions */
+    --primary-hover: 214 100% 50%;
+    --success: 151 55% 41%;
+    --warning: 38 92% 50%;
+    --info: 211 100% 40%;
+
+    /* Input */
+    --input-bg: 210 20% 98%;
+    --focus-ring: 211 100% 65%;
+
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: ui-monospace, monospace;
+
+    /* Jira-style shadows */
+    --shadow-card: 0 1px 2px 0 rgb(9 30 66 / 0.08);
+    --shadow-card-hover: 0 4px 8px -2px rgb(9 30 66 / 0.1), 0 2px 4px -2px rgb(9 30 66 / 0.06);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .text-heading-small {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: hsl(218 14% 55%);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .shadow-sidebar {
+    box-shadow: 4px 0 6px -1px rgb(0 0 0 / 0.08);
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgb(223 225 230 / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(223 225 230 / 0.5) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .map-gradient {
+    background: linear-gradient(135deg, #F4F5F7 0%, #EBECF0 50%, #DFE1E6 100%);
+  }
+}
